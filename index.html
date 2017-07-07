@@ -1,0 +1,27 @@
+<html ng-app="myApp">
+
+<head>
+    <title>Clock App</title>
+    <script src="angular.js"></script>
+</head>
+
+<body>
+    <div ng-controller="MainCtrl">
+        <p>What time it is?</p>
+        <p ng-if="time_of_day<12">Good Morning!</p>
+        <p ng-if="time_of_day>12">Good Evening!</p>
+        <p>It is
+            <spna>{{time_of_day}}</span>
+        </p>
+    </div>
+    <script>
+        var module = angular.module("myApp", []);
+        module.controller("MainCtrl", Main);
+
+        function Main($scope) {
+            $scope.time_of_day = new Date();
+        }
+    </script>
+</body>
+
+</html>
